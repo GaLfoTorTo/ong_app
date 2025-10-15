@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONG app</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/pages/index.html">
+                <img src="/assets/img/logo.png" id="nav-logo" alt="Home Page">
+            </a>
+            <ul>
+                <li>
+                    <a href="#sobre">Sobre Nós</a>
+                </li>
+                <li>
+                    <a href="#endereco">Endereço</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+                <li>
+                    <a href="/pages/projetos.html">Projetos</a>
+                </li>
+                <li>
+                    <a href="/pages/cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+            <div class="entrar">
+                <a class="btn btn-outline btn-rounded-left" href="/pages/index.html">Cadastrar</a>
+                <a class="btn btn-outline btn-rounded-right" href="/pages/index.html">Entrar</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="capa">
+            <h1 class="text-white">ONG Reflorestar</h1>
+            <h4 class="text-white">Encontre os melhores projetos florestais no ONGs app </h4>
+        </section>
+        <section id="sobre">
+            <h2 class="text-dark p-3">Sobre Nós</h2>
+            <p class="text-xl p-3">Nós nascemos com o compromisso de equilibrar a convivencia entre o ser humano e a natureza. Somos uma organização sem fins lucrativos dedicada ao reflorestamento de áreas degradadas e à preservação de ecossistemas em risco, promovendo ações que restauram a vida e fortalecem a relação entre as pessoas e o meio ambiente.</p>
+            <article class="flex flex-row justify-center align-center">
+                <img src="/assets/img/card_1.jpg" class="card-img w-25" alt="">
+                <img src="/assets/img/card_6.jpg" class="card-img w-25" alt="">
+                <img src="/assets/img/card_2.jpg" class="card-img w-25" alt="">
+            </article>
+            <article>
+                <p class="text-xl p-3">Acreditamos que cada árvore plantada é um passo em direção a um planeta mais saudável. Por isso, trabalhamos em parceria com comunidades locais, escolas, empresas e voluntários para recuperar florestas nativas, proteger nascentes e conscientizar sobre a importância da sustentabilidade.</p>
+            </article>
+        </section>
+        <section id="endereco">
+            <article class="flex flex-col p-4">
+                <h2 class="text-white p-3">Endereço</h2>
+                <h3 class="text-white">Reserva Ecológica Florestar — Mocajuba (PA)</h3>
+                <p class="text-xl text-white p-3 w-75">Nossa sede de reflorestamento está localizada na Reserva Ecológica Florestar, no coração do Vale do Tucurui — uma região rica em biodiversidade e cercada por rios e áreas de floresta amazônica - de grande biodiversidade e alto valor ecológico. A reserva abriga áreas de nascentes, corredores ecológicos e trechos de floresta em recuperação, onde realizamos plantios de espécies nativas, monitoramento de fauna e ações educativas com comunidades indígenas locais.
+                </p>
+                <iframe
+                    width="75%"
+                    height="450"
+                    frameborder="0"
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-49.525%2C-2.63%2C-49.495%2C-2.60&layer=mapnik&marker=-2.615%2C-49.51"
+                    class="map"
+                ></iframe>
+            </article>
+        </section>
+        <section id="contato">
+            <h2 class="text-dark p-3">Contato</h2>
+            <p class="text-xl p-3 w-50">Gostou da nosso propósito ? Gostaria de fazer parte dessa iniciativa ? Entre em contato conosco e nos diga como você pode contribuir.</p>
+            <article class="flex flex-row justify-center align-center w-75">
+                <form action="#" method="get" class="card-contato w-50">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" placeholder="Ex: João Carlos" required aria-label="nome"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="Ex: joao.carlos@email.com" required aria-label="email"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" name="telefone" id="telefone" placeholder="Ex: (61) 99999-9999" required aria-label="telefone"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea name="message" id="message" rows="5" placeholder="Ex: Ola, gostaria de fazer parte do projeto..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn btn-outline">Enviar</button>
+                </form>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <a href="/pages/index.html">
+            <img src="/assets/img/logo.png" id="nav-logo" alt="Home Page">
+        </a>
+        <div class="footer-endereco">
+            <span>Reserva Ecológica Florestar </span>
+            <span>Vale do Tucurui</span>
+            <span>Mocajuba (PA)</span>
+            <span>Tel: (61) 99999-9999</span>
+        </div>
+        <span class="text-white">ONG app © 2025.</span>
+    </footer>
+</body>
+</html>
