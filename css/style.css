@@ -133,6 +133,26 @@ p {
   padding: 5.2rem!important;
 }
 
+.pb-1 {
+  padding-bottom: 1.4rem!important;
+}
+
+.pb-2 {
+  padding-bottom: 2.6rem!important;
+}
+
+.pb-3 {
+  padding-bottom: 3rem!important;
+}
+
+.pb-4 {
+  padding-bottom: 4.8rem!important;
+}
+
+.pb-5 {
+  padding-bottom: 5.2rem!important;
+}
+
 /* MARGIN */
 
 .m-1 {
@@ -208,7 +228,7 @@ p {
   border-radius: 10px;
   background-color: var(--color-primary);
   color: #fff;
-  font-size: var(--f-xl);
+  font-size: var(--f-md);
   text-decoration: none;
 }
 
@@ -335,16 +355,33 @@ nav > ul > li > a:hover {
 }
 
 /* CAPA */
-#capa {
-  background-image: url("/assets/img/capa.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.capa {
   height: 40rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#capa-home {
+  background-image: url("/assets/img/capa.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#capa-projetos {
+  background-image: url("/assets/img/capa4.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#capa-cadastro {
+  background-image: url("/assets/img/capa4.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* SOBRE NOS */
@@ -418,4 +455,60 @@ footer {
 .footer-endereco > span {
   margin: 0;
   text-align: left!important;
+}
+
+/* PROEJOS */
+
+#projetos {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.card-projetos{
+  width: 20rem;
+  margin: 15px;
+  border: solid 0;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px var(--color-muted);
+}
+
+.card-header {
+  width: 100%;
+  height: 10rem;
+}
+
+.card-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card-footer {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.img-header {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.text-card {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.text-card.show {
+  opacity: 1;
+  display: block;
 }
