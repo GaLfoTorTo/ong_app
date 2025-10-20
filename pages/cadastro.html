@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONG app</title>
+    <link rel="icon" href="/assets/img/logo.png" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/pages/index.html" class="m-0">
+                <img src="/assets/img/logo.png" id="nav-logo" alt="Home Page">
+            </a>
+            <button class="menu-toggle" onclick="document.querySelector('nav > ul').classList.toggle('open')">
+                ☰
+            </button>
+            <ul>
+                <li>
+                    <a href="/pages/index.html">Sobre Nós</a>
+                </li>
+                <li>
+                    <a href="/pages/index.html">Endereço</a>
+                </li>
+                <li>
+                    <a href="/pages/index.html">Contato</a>
+                </li>
+                <li>
+                    <a href="/pages/projetos.html">Projetos</a>
+                </li>
+                <li>
+                    <a href="/pages/cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="capa-cadastro" class="capa">
+            <h1 class="text-white">Cadastro</h1>
+            <h4 class="text-white">Deseja fazer parte do nosso time ou tem algum projeto que você acredita que possamos colaborar ?</h4>
+        </section>
+        <section id="projetos">
+            <article class="flex flex-row justify-center align-center w-75">
+                <form action="#" method="get" class="card-contato w-100">
+                    <div class="form-check">
+                        <input class="form-check-input modalidade" type="radio" name="modalidade" id="modalidade1">
+                        <label class="form-check-label" for="modalidade1">Colaborador</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input modalidade" type="radio" name="modalidade" id="modalidade2">
+                        <label class="form-check-label" for="modalidade2">Apoiador</label>
+                    </div>
+                    <div class=" flex flex-row">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" id="nome" placeholder="Ex: João Carlos" required aria-label="nome"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="sobrenome">Sobrenome</label>
+                            <input type="text" name="nome" id="nome" placeholder="Ex: João Carlos" required aria-label="nome"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="Ex: joao.carlos@email.com" required aria-label="email"/>
+                    </div>
+                    <div class=" flex flex-row">
+                        <div class="form-group">
+                            <label for="cpf">CPF</label>
+                            <input type="number" name="cpf" id="cpf" placeholder="Ex: 999.999.999-99" required aria-label="cpf"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" name="telefone" id="telefone" placeholder="Ex: (61) 99999-9999" required aria-label="telefone"/>
+                        </div>
+                    </div>
+                    <div class="form-group descricao" style="display: none;">
+                        <label for="descricao">Descrição Projeto</label>
+                        <textarea name="descricao" id="descricao" rows="5" placeholder="Ex: Ola, gostaria de fazer parte do projeto..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn btn-outline">Enviar</button>
+                </form>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <a href="/pages/index.html">
+            <img src="/assets/img/logo.png" id="nav-logo" alt="Home Page">
+        </a>
+        <div class="footer-endereco">
+            <span>Reserva Ecológica Florestar </span>
+            <span>Vale do Tucurui</span>
+            <span>Mocajuba (PA)</span>
+            <span>Tel: (61) 99999-9999</span>
+        </div>
+        <span class="text-white">ONG app © 2025.</span>
+    </footer>
+</body>
+<script>
+    //RESGATAR BOTÕES DE DETALHES
+    const buttons = document.getElementsByClassName("modalidade");
+    //PERCORRER BOTÕES E ADICINOAR EVENT LISTENER
+    for (const btn of buttons) {
+        btn.addEventListener("click", (e) => {
+            //RESGATAR STATUS DE ABERTURA E IDENTIFICADO
+            const id = e.target.id;
+            //RESGATAR CAMPOS E LABELS
+            const descricao = document.getElementsByClassName('descricao');
+            const labelNome = document.querySelector('label[for=nome]');
+            const labelSobrenome = document.querySelector('label[for=sobrenome]');
+            const labelCpf = document.querySelector('label[for=cpf]');
+            //VERIFICAR QUAL DAS MODALIDADES FOI SELECIOANDA
+            if(id == 'modalidade1'){
+                //EXIBIR DESCRICAO
+                descricao[0].classList.add("show");
+                //ALTERAR LABEL
+                labelNome.innerHTML = 'Nome';
+                labelSobrenome.innerHTML = 'Sobrenome';
+                labelCpf.innerHTML = 'CPF';
+            }else{
+                //ESCONDER DESCRICAO
+                descricao[0].classList.remove("show");
+                //ALTERAR LABEL
+                labelNome.innerHTML = 'Razão Social';
+                labelSobrenome.innerHTML = 'Nome Fantasia';
+                labelCpf.innerHTML = 'CNPJ';
+            }
+        });
+    }
+</script>
+</html>

@@ -10,18 +10,21 @@
 <body>
     <header>
         <nav>
-            <a href="/pages/index.html">
+            <a href="/pages/index.html" class="m-0">
                 <img src="/assets/img/logo.png" id="nav-logo" alt="Home Page">
             </a>
+            <button class="menu-toggle" onclick="document.querySelector('nav > ul').classList.toggle('open')">
+                ☰
+            </button>
             <ul>
                 <li>
-                    <a href="#sobre">Sobre Nós</a>
+                    <a href="/pages/index.html">Sobre Nós</a>
                 </li>
                 <li>
-                    <a href="#endereco">Endereço</a>
+                    <a href="/pages/index.html">Endereço</a>
                 </li>
                 <li>
-                    <a href="#contato">Contato</a>
+                    <a href="/pages/index.html">Contato</a>
                 </li>
                 <li>
                     <a href="/pages/projetos.html">Projetos</a>
@@ -30,10 +33,6 @@
                     <a href="/pages/cadastro.html">Cadastro</a>
                 </li>
             </ul>
-            <div class="entrar">
-                <a class="btn btn-outline btn-rounded-left" href="/pages/index.html">Cadastrar</a>
-                <a class="btn btn-outline btn-rounded-right" href="/pages/index.html">Entrar</a>
-            </div>
         </nav>
     </header>
     <main>
