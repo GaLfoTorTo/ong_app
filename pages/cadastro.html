@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONG app</title>
-    <link rel="icon" href="/assets/img/logo.png" sizes="32x32" type="image/png">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="../assets/img/logo.png" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="/pages/index.html" class="m-0">
-                <img src="/assets/img/logo.png" id="nav-logo" alt="Home Page">
+            <a href="../pages/index.html" class="m-0">
+                <img src="../assets/img/logo.png" id="nav-logo" alt="Home Page">
             </a>
             <button class="menu-toggle" onclick="document.querySelector('nav > ul').classList.toggle('open')">
                 ☰
             </button>
             <ul>
                 <li>
-                    <a href="/pages/index.html">Sobre Nós</a>
+                    <a href="../pages/index.html">Sobre Nós</a>
                 </li>
                 <li>
-                    <a href="/pages/index.html">Endereço</a>
+                    <a href="../pages/index.html">Endereço</a>
                 </li>
                 <li>
-                    <a href="/pages/index.html">Contato</a>
+                    <a href="../pages/index.html">Contato</a>
                 </li>
                 <li>
-                    <a href="/pages/projetos.html">Projetos</a>
+                    <a href="../pages/projetos.html">Projetos</a>
                 </li>
                 <li>
-                    <a href="/pages/cadastro.html">Cadastro</a>
+                    <a href="../pages/cadastro.html">Cadastro</a>
                 </li>
             </ul>
         </nav>
@@ -74,8 +74,46 @@
                             <label for="telefone">Telefone</label>
                             <input type="tel" name="telefone" id="telefone" placeholder="Ex: (61) 99999-9999" required aria-label="telefone"/>
                         </div>
+                        <div class="form-group alternativeField show">
+                            <label for="data_nascimento">Data Nascimento</label>
+                            <input type="date" name="data_nascimento" id="data_nascimento" placeholder="Ex: (61) 99999-9999" required aria-label="data_nascimento"/>
+                        </div>
                     </div>
-                    <div class="form-group descricao" style="display: none;">
+                    <div class=" flex flex-row">
+                        <div class="form-group">
+                            <label for="cep">CEP</label>
+                            <input type="number" name="cep" id="cep" placeholder="Ex: 99999-999" pattern="^\d{5}-\d{3}$" required aria-label="cep"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="logradouro">Logradouro</label>
+                            <input type="text" name="logradouro" id="logradouro" placeholder="Ex: Rua 28..." required aria-label="logradouro"/>
+                        </div>
+                    </div>
+                    <div class=" flex flex-row">
+                        <div class="form-group">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" name="bairro" id="bairro" placeholder="Ex: São João" required aria-label="bairro"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" name="cidade" id="cidade" placeholder="Ex: Brasília" required aria-label="cidade"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">UF</label>
+                            <input type="text" name="estado" id="estado" placeholder="Ex: DF" pattern="[A-Z]{2}" required aria-label="estado"/>
+                        </div>
+                    </div>
+                    <div class=" flex flex-row">
+                        <div class="form-group">
+                            <label for="complemento">Complemento</label>
+                            <input type="text" name="complemento" id="complemento" placeholder="Ex: São João" required aria-label="complemento"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="numero">Nº</label>
+                            <input type="number" name="numero" id="numero" placeholder="Ex: São João" required aria-label="numero"/>
+                        </div>
+                    </div>
+                    <div class="form-group alternativeField">
                         <label for="descricao">Descrição Projeto</label>
                         <textarea name="descricao" id="descricao" rows="5" placeholder="Ex: Ola, gostaria de fazer parte do projeto..."></textarea>
                     </div>
@@ -85,8 +123,8 @@
         </section>
     </main>
     <footer>
-        <a href="/pages/index.html">
-            <img src="/assets/img/logo.png" id="nav-logo" alt="Home Page">
+        <a href="../pages/index.html">
+            <img src="../assets/img/logo.png" id="nav-logo" alt="Home Page">
         </a>
         <div class="footer-endereco">
             <span>Reserva Ecológica Florestar </span>
@@ -106,21 +144,23 @@
             //RESGATAR STATUS DE ABERTURA E IDENTIFICADO
             const id = e.target.id;
             //RESGATAR CAMPOS E LABELS
-            const descricao = document.getElementsByClassName('descricao');
+            const fieldHidden = document.getElementsByClassName('alternativeField');
             const labelNome = document.querySelector('label[for=nome]');
             const labelSobrenome = document.querySelector('label[for=sobrenome]');
             const labelCpf = document.querySelector('label[for=cpf]');
             //VERIFICAR QUAL DAS MODALIDADES FOI SELECIOANDA
             if(id == 'modalidade1'){
                 //EXIBIR DESCRICAO
-                descricao[0].classList.add("show");
+                fieldHidden[0].classList.add("show");
+                fieldHidden[1].classList.remove("show");
                 //ALTERAR LABEL
                 labelNome.innerHTML = 'Nome';
                 labelSobrenome.innerHTML = 'Sobrenome';
                 labelCpf.innerHTML = 'CPF';
             }else{
                 //ESCONDER DESCRICAO
-                descricao[0].classList.remove("show");
+                fieldHidden[0].classList.remove("show");
+                fieldHidden[1].classList.add("show");
                 //ALTERAR LABEL
                 labelNome.innerHTML = 'Razão Social';
                 labelSobrenome.innerHTML = 'Nome Fantasia';

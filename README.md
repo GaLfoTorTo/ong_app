@@ -1,12 +1,12 @@
-# 🌱 Aplicação Web - ONG App
+# 🌱 Aplicação Web - ONG Reflorestar
 
-Bem-vindo ao repositório oficial da **ONG App** — uma plataforma web desenvolvida para promover a conscientização ambiental, divulgar projetos sustentáveis e facilitar o engajamento de colaboradores e idealizadores em ações ecológicas.
+Bem-vindo ao repositório oficial da **ONG Reflorestar** — uma plataforma web desenvolvida para promover a conscientização ambiental, divulgar projetos sustentáveis e facilitar o engajamento de colaboradores e idealizadores em ações ecológicas.
 
 ---
 
 ## 🧭 Sobre o Projeto
 
-A **ONG App** é uma ONG comprometida com a preservação do meio ambiente e o desenvolvimento sustentável.  
+A **ONG Reflorestar** é uma ONG comprometida com a preservação do meio ambiente e o desenvolvimento sustentável.  
 Esta aplicação web foi criada para:
 
 - Apresentar a missão, visão e valores da ONG;  
