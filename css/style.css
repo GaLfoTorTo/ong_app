@@ -428,7 +428,7 @@ nav > ul > li > a:hover {
   align-items: center;
 }
 
-#nav-logo {
+.logo {
   width: 7rem;
   height: 50px;
   object-fit: cover;

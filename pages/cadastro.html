@@ -11,7 +11,7 @@
     <header>
         <nav>
             <a href="../pages/index.html" class="m-0">
-                <img src="../assets/img/logo.png" id="nav-logo" alt="Home Page">
+                <img src="../assets/img/logo.png" class="logo" alt="Home Page">
             </a>
             <button class="menu-toggle" onclick="document.querySelector('nav > ul').classList.toggle('open')">
                 ☰
@@ -58,7 +58,7 @@
                         </div>
                         <div class="form-group">
                             <label for="sobrenome">Sobrenome</label>
-                            <input type="text" name="nome" id="nome" placeholder="Ex: João Carlos" required aria-label="nome"/>
+                            <input type="text" name="nome" id="sobrenome" placeholder="Ex: João Carlos" required aria-label="nome"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -76,13 +76,13 @@
                         </div>
                         <div class="form-group alternativeField show">
                             <label for="data_nascimento">Data Nascimento</label>
-                            <input type="date" name="data_nascimento" id="data_nascimento" placeholder="Ex: (61) 99999-9999" required aria-label="data_nascimento"/>
+                            <input type="date" name="data_nascimento" id="data_nascimento" aria-label="data_nascimento"/>
                         </div>
                     </div>
                     <div class=" flex flex-row">
                         <div class="form-group">
                             <label for="cep">CEP</label>
-                            <input type="number" name="cep" id="cep" placeholder="Ex: 99999-999" pattern="^\d{5}-\d{3}$" required aria-label="cep"/>
+                            <input type="text" name="cep" id="cep" placeholder="Ex: 99999-999" pattern="^\d{5}-\d{3}$" required aria-label="cep"/>
                         </div>
                         <div class="form-group">
                             <label for="logradouro">Logradouro</label>
@@ -124,7 +124,7 @@
     </main>
     <footer>
         <a href="../pages/index.html">
-            <img src="../assets/img/logo.png" id="nav-logo" alt="Home Page">
+            <img src="../assets/img/logo.png" class="logo" alt="Home Page">
         </a>
         <div class="footer-endereco">
             <span>Reserva Ecológica Florestar </span>
@@ -134,39 +134,39 @@
         </div>
         <span class="text-white">ONG app © 2025.</span>
     </footer>
+    <script>
+        //RESGATAR BOTÕES DE DETALHES
+        const buttons = document.getElementsByClassName("modalidade");
+        //PERCORRER BOTÕES E ADICINOAR EVENT LISTENER
+        for (const btn of buttons) {
+            btn.addEventListener("click", (e) => {
+                //RESGATAR STATUS DE ABERTURA E IDENTIFICADO
+                const id = e.target.id;
+                //RESGATAR CAMPOS E LABELS
+                const fieldHidden = document.getElementsByClassName('alternativeField');
+                const labelNome = document.querySelector('label[for=nome]');
+                const labelSobrenome = document.querySelector('label[for=sobrenome]');
+                const labelCpf = document.querySelector('label[for=cpf]');
+                //VERIFICAR QUAL DAS MODALIDADES FOI SELECIOANDA
+                if(id == 'modalidade1'){
+                    //EXIBIR DESCRICAO
+                    fieldHidden[0].classList.add("show");
+                    fieldHidden[1].classList.remove("show");
+                    //ALTERAR LABEL
+                    labelNome.innerHTML = 'Nome';
+                    labelSobrenome.innerHTML = 'Sobrenome';
+                    labelCpf.innerHTML = 'CPF';
+                }else{
+                    //ESCONDER DESCRICAO
+                    fieldHidden[0].classList.remove("show");
+                    fieldHidden[1].classList.add("show");
+                    //ALTERAR LABEL
+                    labelNome.innerHTML = 'Razão Social';
+                    labelSobrenome.innerHTML = 'Nome Fantasia';
+                    labelCpf.innerHTML = 'CNPJ';
+                }
+            });
+        }
+    </script>
 </body>
-<script>
-    //RESGATAR BOTÕES DE DETALHES
-    const buttons = document.getElementsByClassName("modalidade");
-    //PERCORRER BOTÕES E ADICINOAR EVENT LISTENER
-    for (const btn of buttons) {
-        btn.addEventListener("click", (e) => {
-            //RESGATAR STATUS DE ABERTURA E IDENTIFICADO
-            const id = e.target.id;
-            //RESGATAR CAMPOS E LABELS
-            const fieldHidden = document.getElementsByClassName('alternativeField');
-            const labelNome = document.querySelector('label[for=nome]');
-            const labelSobrenome = document.querySelector('label[for=sobrenome]');
-            const labelCpf = document.querySelector('label[for=cpf]');
-            //VERIFICAR QUAL DAS MODALIDADES FOI SELECIOANDA
-            if(id == 'modalidade1'){
-                //EXIBIR DESCRICAO
-                fieldHidden[0].classList.add("show");
-                fieldHidden[1].classList.remove("show");
-                //ALTERAR LABEL
-                labelNome.innerHTML = 'Nome';
-                labelSobrenome.innerHTML = 'Sobrenome';
-                labelCpf.innerHTML = 'CPF';
-            }else{
-                //ESCONDER DESCRICAO
-                fieldHidden[0].classList.remove("show");
-                fieldHidden[1].classList.add("show");
-                //ALTERAR LABEL
-                labelNome.innerHTML = 'Razão Social';
-                labelSobrenome.innerHTML = 'Nome Fantasia';
-                labelCpf.innerHTML = 'CNPJ';
-            }
-        });
-    }
-</script>
 </html>

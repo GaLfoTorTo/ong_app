@@ -11,7 +11,7 @@
     <header>
         <nav>
             <a href="../pages/index.html" class="m-0">
-                <img src="../assets/img/logo.png" id="nav-logo" alt="Home Page">
+                <img src="../assets/img/logo.png" class="logo" alt="Home Page">
             </a>
             <button class="menu-toggle" onclick="document.querySelector('nav > ul').classList.toggle('open')">
                 ☰
@@ -117,7 +117,7 @@
     </main>
     <footer>
         <a href="../pages/index.html">
-            <img src="../assets/img/logo.png" id="nav-logo" alt="Home Page">
+            <img src="../assets/img/logo.png" class="logo" alt="Home Page">
         </a>
         <div class="footer-endereco">
             <span>Reserva Ecológica Florestar </span>
@@ -127,20 +127,20 @@
         </div>
         <span class="text-white">ONG app © 2025.</span>
     </footer>
+    <script>
+        //RESGATAR BOTÕES DE DETALHES
+        const buttons = document.getElementsByClassName("btn");
+        //PERCORRER BOTÕES E ADICINOAR EVENT LISTENER
+        for (const btn of buttons) {
+            btn.addEventListener("click", (e) => {
+                //RESGATAR STATUS DE ABERTURA E IDENTIFICADO
+                const i = e.target.dataset.index;
+                //RESGATAR TEXTO ESCONDIDO
+                const text = document.getElementById(`detalhes_${i}`);
+                //EXIBIR OU ESCONDER TEXT
+                text.classList.toggle("show");
+            });
+        }
+    </script>
 </body>
-<script>
-    //RESGATAR BOTÕES DE DETALHES
-    const buttons = document.getElementsByClassName("btn");
-    //PERCORRER BOTÕES E ADICINOAR EVENT LISTENER
-    for (const btn of buttons) {
-        btn.addEventListener("click", (e) => {
-            //RESGATAR STATUS DE ABERTURA E IDENTIFICADO
-            const i = e.target.dataset.index;
-            //RESGATAR TEXTO ESCONDIDO
-            const text = document.getElementById(`detalhes_${i}`);
-            //EXIBIR OU ESCONDER TEXT
-            text.classList.toggle("show");
-        });
-    }
-</script>
 </html>
